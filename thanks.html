@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PanaderiAPP</title>
+    <link rel="stylesheet" href="dist/boostrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 70px;">
+    <a class="navbar-brand mr-auto" href="#" data-vivaldi-spatnav-clickable="1">PanaderiaAPP</a>
+</nav>
+
+<div class="container py-4">
+    <div class="card mt-3 mb-1">
+        <div class="card-body" id="ticketContainer" >
+            <h3 class="text-center">TICKET DE COMPRA</h3>
+            <table class="table ">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cant.</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Importe</th>
+                </tr>
+                </thead>
+                <tbody id="ticketTable">
+
+                </tbody>
+            </table>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded">
+                        <div class="card-header">
+                            <h3 class="mb-0">Gracias por tu compra</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="alertSuccess" class="alert-success text-center p-2 mb-1" hidden>
+                            </div>
+                            <div class="text-center">
+                            <img src="img/loadingbread.svg" id="loading" hidden>
+                            </div>
+                                <p class="lead"><strong>Por favor revisa tu email para obtener tu ticket de compra</strong></p>
+                                      <hr>
+                                      <p>
+                                        Algún problema? <a href="contact.html">Contacta con nosotros</a>
+                                      </p>
+                                      <p class="lead">
+                                        <a class="btn btn-primary btn-sm" id="btn-homepage" href="categories.html" role="button">Volver a la página principal</a>
+                                      </p>
+                                    </div>  
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+<script src="dist/fontawesome/fontawesome-all.min.js"></script>
+<script src="dist/jquery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="dist/boostrap4/js/bootstrap.min.js"></script>
+<script src="js/thanks.js"></script>
+</body>
+</html>

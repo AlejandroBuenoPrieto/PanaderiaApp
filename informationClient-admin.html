@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PanaderiaAPP</title>
+    <link rel="stylesheet" href="dist/boostrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 70px;">
+    <button class="btn btn-dark rounded-0 col-3 w-25 btn-back"><i class="fas fa-chevron-circle-left back-icon"></i>
+    </button>
+    <div class="dropdown show">
+        <a class="navbar-brand mr-auto text-center logo col btn btn-outline-dark dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PanaderiaAPP</a>
+        <div class="dropdown-menu bg-dark rounded-0 border-0" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item text-light py-3" href="login.html" id="btn-logOut"><i class="fas fa-sign-out-alt fa-fw"></i> Cerrar Sesión</a>
+        </div>
+    </div>
+    <div class="col-3">
+
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom px-0" style="height: 70px;">
+    <div class="p-0 col-4 text-center btn-select">
+        <a class="navbar-brand d-block m-auto" href="categories-admin.html">
+            <i class="fas fa-list d-block m-auto"></i>
+            <span class="badge d-block m-auto">Productos</span>
+        </a>
+    </div>
+    <div class="p-0 col-4 text-center btn-select">
+        <a class="navbar-brand d-block m-auto" href="reservations-admin.html">
+            <i class="fas fa-calendar-alt d-block m-auto"></i>
+            <span class="badge d-block m-auto">Reservas</span>
+        </a>
+    </div>
+    <div class="p-0 col-4 text-center btn-select active">
+        <a class="navbar-brand d-block m-auto" href="settings-admin.html">
+            <span class="fas fa-cog d-block m-auto"></span>
+            <span class="badge d-block m-auto">Ajustes</span>
+        </a>
+    </div>
+</nav>
+
+<div id="content">
+    <h4 class="text-primary px-3 pt-3 text-center"><span class="fas fa-users"></span> Área de clientes</h4>
+    <div id="clientsContainer" class="p-5">
+
+    </div>
+</div>
+
+<script src="dist/fontawesome/fontawesome-all.min.js"></script>
+<script src="dist/jquery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="dist/boostrap4/js/bootstrap.min.js"></script>
+<script src="js/informationClient-admin.js"></script>
+</body>
+</html>

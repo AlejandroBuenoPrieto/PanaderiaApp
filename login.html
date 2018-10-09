@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PanaderiAPP</title>
+    <link rel="stylesheet" href="dist/boostrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 70px;">
+    <a class="navbar-brand mr-auto" href="#" data-vivaldi-spatnav-clickable="1">PanaderiaAPP</a>
+</nav>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded">
+                        <div class="card-header">
+                            <h3 class="mb-0">Iniciar Sesión</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="alertSuccess" class="alert-success text-center p-2 mb-1" hidden></div>
+                            <div id="alertFail" class="alert-danger text-center p-2 mb-1" hidden></div>
+                            <form class="form" id="loginForm" onsubmit="validation()">
+                                <div class="form-group">
+                                    <label>Nombre de usuario:</label>
+                                    <input type="text" class="form-control form-control-lg" name="username"
+                                           id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contraseña:</label>
+                                    <input type="password" class="form-control form-control-lg" name="password"
+                                           id="password" required>
+                                </div>
+                                <button type="button" class="btn btn-primary float-left" id="btn-Signup">Registrar <i class="fas fa-user-plus"></i>
+                                </button>
+                                <button type="submit" class="btn btn-primary float-right" id="btn-Login">Acceder <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+<script src="dist/fontawesome/fontawesome-all.min.js"></script>
+<script src="dist/jquery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="dist/boostrap4/js/bootstrap.min.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

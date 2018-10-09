@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PanaderiaAPP</title>
+    <link rel="stylesheet" href="dist/boostrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 70px;">
+    <button class="btn btn-dark rounded-0 col-3 w-25 btn-back"><i class="fas fa-chevron-circle-left back-icon"></i>
+    </button>
+    <a class="navbar-brand mr-auto text-center col" href="#">PanaderiaAPP</a>
+    <div class="col-3">
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom px-0" style="height: 70px;">
+    <div class="p-0 col-4 text-center">
+        <a class="navbar-brand d-block m-auto" href="categories.html">
+            <i class="fas fa-list d-block m-auto"></i>
+            <span class="badge d-block m-auto">Productos</span>
+        </a>
+    </div>
+    <div class="p-0 col-4 text-center btn-select">
+        <a class="navbar-brand d-block m-auto" href="reservations.html">
+            <i class="fas fa-calendar-alt d-block m-auto"></i>
+            <span class="badge d-block m-auto">Reservas</span>
+        </a>
+    </div>
+    <div class="p-0 col-4 text-center btn-select">
+        <a class="navbar-brand d-block m-auto" href="#">
+            <span class=" shipping-timed d-block m-auto"></span>
+            <span class="badge d-block m-auto">Pedidos Diarios</span>
+        </a>
+    </div>
+</nav>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <!-- form card login -->
+                <div class="card rounded">
+                    <div class="card-header">
+                        <h3 class="mb-0">Pago con tarjeta</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="alertSuccess" class="alert-success text-center p-2 mb-1" hidden></div>
+                        <div id="alertFail" class="alert-danger text-center p-2 mb-1" hidden></div>
+                        <form class="form" id="payFrom" onsubmit="validation()">
+
+                            <div class="form-group">
+                                <label>Nombre y apellidos del titular:</label>
+                                <input id="name" name="name" type="text" placeholder="Ingrese nombre y apellidos" class="form-control input-md">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Seleccione Tipo de Tarjeta</label>
+                                <select id="card_type" name="card_type" class="form-control">
+                                    <option value="VISA">VISA</option>
+                                    <option value="MASTER CARD">MASTER CARD</option>
+                                    <option value="AMERICAN EXPRESS">AMERICAN EXPRESS</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Número de Tarjeta:</label>
+                                <div></div>
+                                <input id="CardNumber" name="CardNumber" type="text" placeholder="Ingrese Numero de tarjeta" class="form-control input-md">
+                            </div>
+
+                            <div class="field-span pay-date-width">
+                                <label for="ccMonth">Fecha de vencimiento:</label>
+                                <div></div>
+                                <span class="a-dropdown-container card-date ">
+                                        <select id="ccMonth" name="month" class="a-native-dropdown native-dropdown ">
+                                          <option value="1" selected="selected">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                                        </select>
+                                      </span>
+
+                                <span class="a-dropdown-container card-date ">
+                                        <select id="ccYear" name="year" class="a-native-dropdown native-dropdown ">
+                                          <option value="2018" selected="selected">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option>
+                                        </select>
+                                      </span>
+                            </div>
+                            <p></p>
+                            <div class="form-group">
+                                <label>CVC:</label>
+                                <input id="cvc" name="cvc" type="text" placeholder="CVC" class="form-control input-md">
+                            </div>
+                        </form>
+                    </div>
+                    <div id="PayButtons" class="px-3">
+                        <button id="btn-cancel" type="button" class="btn btn-danger float-left" onclick="window.location.href='cart.html'">Cancelar</button>
+                        <button class="btn btn-success float-right" role="button" id="btn-pay">Pagar <i class="fas fa-credit-card fa-fw"></i></button>
+                    </div>
+                    <!--/card-block-->
+                </div>
+                <!-- /form card login -->
+            </div>
+        </div>
+        <!--/row-->
+    </div>
+    <!--/col-->
+</div>
+<!--/row-->
+
+<!-- TODO: los bordes inferiores quedan deajustados -->
+
+
+<script src="dist/fontawesome/fontawesome-all.min.js"></script>
+<script src="dist/jquery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="dist/boostrap4/js/bootstrap.min.js"></script>
+<script src="js/cart-pay.js"></script>
+</body>
+</html>

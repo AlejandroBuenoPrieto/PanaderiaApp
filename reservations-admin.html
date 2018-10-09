@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PanaderiaAPP</title>
+    <link rel="stylesheet" href="dist/boostrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 70px;">
+    <button class="btn btn-dark rounded-0 col-3 w-25 btn-back"><i class="fas fa-chevron-circle-left back-icon"></i>
+    </button>
+    <div class="dropdown show">
+        <a class="navbar-brand mr-auto text-center logo col btn btn-outline-dark dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PanaderiaAPP</a>
+        <div class="dropdown-menu bg-dark rounded-0 border-0" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item text-light py-3" href="login.html" id="btn-logOut"><i class="fas fa-sign-out-alt fa-fw"></i> Cerrar Sesión</a>
+        </div>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary rounded-0" data-toggle="modal" data-target="#addProduct-box"><i class="fas fa-plus-circle"></i>
+        </button>
+    </div>
+        <div class="modal fade" id="addProduct-box" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Añadir producto especial</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form" id="productAddForm">   
+                                <div class="form-group">
+                                    <label>Nombre del producto especial:</label>
+                                    <input type="text" class="form-control form-control-lg" name="product-name"
+                                           id="product-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Precio:</label>
+                                    <input type="number" step="0.01" class="form-control form-control-lg" name="product-price"
+                                           id="product-price" required>
+                                </div>    
+                                <div class="form-group">
+                                    <label>Peso:</label>
+                                        <input type="text" class="form-control form-control-lg" name="product-weight"
+                                           id="product-weight" required>
+                                </div> 
+                                <div class="form-group">
+                                    <label>Ingredientes:</label>
+                                    <textarea type="text" class="form-control form-control-lg" name="product-ingredients"
+                                              id="product-ingredients" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción:</label>
+                                    <textarea type="text" class="form-control form-control-lg" name="product-description"
+                                           id="product-description" required></textarea>
+                                </div>
+                                
+                                 <div class="form-group">
+                                    <label>Subir imagen:</label>
+                                        <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-default btn-file">
+                                                <input type="file" id="product-immg">
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>              
+                            </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="btn-Addproduct">Añadir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom px-0" style="height: 70px;">
+    <div class="p-0 col-4 text-center btn-select">
+        <a class="navbar-brand d-block m-auto" href="categories-admin.html">
+            <i class="fas fa-list d-block m-auto"></i>
+            <span class="badge d-block m-auto">Productos</span>
+        </a>
+    </div>
+    <div class="p-0 col-4 text-center btn-select active">
+        <a class="navbar-brand d-block m-auto" href="reservations-admin.html">
+            <i class="fas fa-calendar-alt d-block m-auto"></i>
+            <span class="badge d-block m-auto">Reservas</span>
+        </a>
+    </div>
+    <div class="p-0 col-4 text-center btn-select">
+        <a class="navbar-brand d-block m-auto" href="settings-admin.html">
+            <span class="fas fa-cog d-block m-auto"></span>
+            <span class="badge d-block m-auto">Ajustes</span>
+        </a>
+    </div>
+</nav>
+
+<div id="content">
+    <div id="productsContainer" class="p-3">
+        
+    </div>
+    <div class="modal fade" id="edit-box" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form" id="productEditForm">   
+                                <div class="form-group">
+                                    <label>Nombre del producto especial:</label>
+                                    <input type="text" class="form-control form-control-lg" name="product-name"
+                                           id="edit-product-name" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Precio:</label>
+                                    <input type="number" step="0.01" class="form-control form-control-lg" name="product-price" id="edit-product-price" >
+                                </div>    
+                                <div class="form-group">
+                                    <label>Peso:</label>
+                                        <input type="text" class="form-control form-control-lg" name="product-weight"
+                                           id="edit-product-weight" >
+                                </div> 
+                                <div class="form-group">
+                                    <label>Ingredientes:</label>
+                                    <textarea type="text" class="form-control form-control-lg" name="product-ingredients"
+                                              id="edit-product-ingredients" ></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción:</label>
+                                    <textarea type="text" class="form-control form-control-lg" name="product-description"
+                                           id="edit-product-description" ></textarea>
+                                </div>
+                                
+                                 <div class="form-group">
+                                    <label>Subir imagen:</label>
+                                        <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-default btn-file">
+                                                <input type="file" id="product-img">
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>              
+                            </form>
+                </div>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="btn-editProduct">Modificar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="delete-box" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Borrar producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label> ¿Está seguro de borrar el producto? </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                    <button type="button" class="btn btn-primary" id="btn-deleteProduct">SI</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="dist/fontawesome/fontawesome-all.min.js"></script>
+<script src="dist/jquery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="dist/boostrap4/js/bootstrap.min.js"></script>
+<script src="js/specialProducts-admin.js"></script>
+</body>
+</html>
